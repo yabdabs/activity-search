@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Park It!</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/tree-favicon.jpeg">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 	Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--Link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bubbler+One|Hanalei+Fill" rel="stylesheet">
+    <!-- Link to Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Link to Delay CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/delay.css">
+    <!-- Link to Relative CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="jumbotron" id="header">
+        <div id="titleAnimate">
+            <h1 id="title">Park It!</h1>
+        </div>
+    </div>
+    <div class="container" id="mainContainer">
+        <!-- Explanation of Website -->
+        <div class="row" id="firstSection">
+            <h1 id="babyHeader">Welcome to Park It!</h1>
+            <p class="openingP">the website that allows you to find an array of outdoor activities wherever you are! Simply fill in the input boxes and hit "Go!" to see the upcoming activities that match your search criteria, the weather for your area, and maps to help you plan your trip.</p>
+            <p class="openingP">So start your search today and</p>
+            <br>
+            <h1 id="closingP">go out and Park It!</h1>
+        </div>
+        <!-- Search Boxes -->
+        <div class="row" id="secondSection">
+            <form class="form-inline" id="searchButtonForm">
+                <!-- City Search Box -->
+                <div class="form-group">
+                    <label>City:</label>
+                    <input type="text" class="form-control" id="cityBox" placeholder="City (Required)">
+                </div>
+                <!-- State Search Box -->
+                <div class="form-group">
+                    <label>State:</label>
+                    <input type="text" class="form-control" id="stateBox" placeholder="State (Required)">
+                </div>
+                <!-- Zip Code Search Box -->
+                <div class="form-group">
+                    <label>Zip Code:</label>
+                    <input type="number" min="1" class="form-control" id="zipCodeBox" placeholder="Zip Code (Required)">
+                </div>
+                <br>
+                <!-- Radius Search Box -->
+                <div class="form-group">
+                    <label>Radius:</label>
+                    <input type="number" min="1" max="100" class="form-control" id="radiusBox" placeholder="In Miles">
+                </div>
+                <!-- Activity Dropdown Menu -->
+                <div class="form-group">
+                    <label>Activity:</label>
+                    <select class="form-control" id="activityBox">
+                        <option value="running">Running</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="walking">Walking</option>
+                        <option value="biking">Mountain Biking</option>
+                        <option value="sailing">Sailing</option>
+                        <option value="hiking">Hiking</option>
+                        <option value="climbing">Climbing</option>
+                        <option value="kayaking">Kayaking</option>
+                        <option value="rafting">Rafting</option>
+                        <option value="fishing">Fishing</option>
+                        <option value="hunting">Hunting</option>
+                    </select>
+                </div>
+                <!-- Button -->
+                <p>
+                    <button type="submit" class="btn btn-default" id="submit">Go!
+                    </button>
+                </p>
+            </form>
+        </div>
+        <!-- Div to hold Weather results -->
+        <div class="row" id="weatherHeader">Weather:</div>
+        <div class="col-lg-12" id="weatherResults">
+            <div class="row">
+                <div class="col-xs-3" id="loca"></div>
+                <div class="col-xs-3" id="temp"></div>
+                <div class="col-xs-3" id="wind"></div>
+                <div class="col-xs-3" id="hum"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6" id="main"></div>
+                <div class="col-xs-6" id="description"></div>
+            </div>
+        </div>
+        <!-- Div to hold Park It! Search Results -->
+        <div class="row" id="activitiesHeader">Activities:</div>
+        <div id="searchResults"></div>
+        <!-- Div to hold Google Maps Results -->
+        <div class="row" id="mapsHeader">Google Maps:</div>
+        <div id="map"></div>
+        <br>
+    </div>
+    <!-- Link to relative JavaScript for Activities -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Link to relative JavaScript for maps -->
+    <script type="text/javascript" src="assets/javascript/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6IYGxelWEBfAaXnJOYV9kEicYJ8hecoU&callback=initMap" async defer></script>
+    <!-- Link to relative Javascript to Animate-->
+    <script type="text/javascript" src="assets/javascript/animate.js"></script>
+    <!-- Link to relative Javascript to Load the Weather -->
+    <script type="text/javascript" src="assets/javascript/weather.js"></script>
+</body>
+
+</html>
