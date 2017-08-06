@@ -6,7 +6,7 @@ $(document).ready(function() {
         var city = $("#cityBox").val().trim();
 
 
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=166a433c57516f51dfab1f7edaed8413";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=166a433c57516f51dfab1f7edaed8413";
 
 
         $.ajax({
