@@ -15,7 +15,7 @@ Users can choose from a list of actities to display based on their location ente
 * Animate CSS
 --------------------------------------------------
 ## Authors
-This was made a a group project in the Rutgers Coding Bootcamp Program
+This was a group project 	in the Rutgers Coding Bootcamp Program
 
 *Abdul Khan (me)
 *[Marni](https://github.com/Marnig18)
